@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class SmartCombining {
+    
+    public static void smartCombine(ArrayList<Integer> first, ArrayList<Integer> second) {
+        for(int num : second) {
+            if (!first.contains(num)) {
+                first.add(num);
+            }
+        }
+    }
     public static void main(String[] args) {
 
         ArrayList<Integer> list1 = new ArrayList<Integer>();
