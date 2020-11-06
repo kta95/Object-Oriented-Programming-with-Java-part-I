@@ -41,24 +41,27 @@ public class HangmanLogic {
 
     public String hiddenWord() {
         // program here the functionality for building the hidden word
-        
+        String temp = "";
+        for (int count = 0; count < this.word.length(); count++) {
+            temp += "_";
+        }
         // create the hidden word by interating through this.word letter by letter
-        String hiddenWord = "";
+        StringBuilder hiddenWord = new StringBuilder(temp);
         // if the letter in turn is within the guessed words, put it in to the hidden word
         for (int i = 0; i < this.word.length(); i++) { 
             char fu = this.word.charAt(i);
             for (int j = 0; j < this.guessedLetters.length(); j++) {
                 char gl = this.guessedLetters.charAt(j);
                 if (fu == gl) {
-                    hiddenWord += gl;
+                    hiddenWord.setCharAt(i, gl);
                     break;
                 }
             }
-            hiddenWord += "_";
         }
         // if the letter is not among guessed, replace it with _ in the hidden word 
-
+        String hw = "";
+        hw += hiddenWord;
         // return the hidden word at the end
-        return hiddenWord;
+        return hw;
     }
 }
