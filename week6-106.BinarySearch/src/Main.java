@@ -15,9 +15,14 @@ public class Main {
         System.out.print("Enter searched number: ");
         String etsittavaLuku = lukija.nextLine();
         System.out.println();
-
+        
         boolean tulos = BinarySearch.search(taulukko, Integer.parseInt(etsittavaLuku));
-
+        
         // Print here the result
+        if (tulos) {
+            System.out.println("Value " + Integer.parseInt(etsittavaLuku) + " is in the array");
+        } else {
+            System.out.println("Value " + Integer.parseInt(etsittavaLuku) + " is not in the array");
+        }
     }
 }
